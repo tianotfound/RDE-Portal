@@ -82,13 +82,13 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                     @csrf
-                        
+
                         <h2 class="text-center py-5"><b>REGISTER</b></h2>
 
                         <div class="row justify-content-center">
                             <div class="col-md-8 mb-3">
                                 <label for="">Name</label> <br>
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="full name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-md-8 mb-3">
                                 <label for="">Email</label> <br>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col-md-8 mb-3">
                                 <label for="">Password</label> <br>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -125,6 +125,10 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="col-md-8 mb-3" style="display: none;">
+                                <label for="pin">Your Login Code</label> <br>
+                                <input type="text" class="form-control" id="pin" name="pin" value="{{ mt_rand(100000, 999999) }}">
                             </div>
                         </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompletedPaper;
 use Illuminate\Http\Request;
 
 class ResearchProfilingController extends Controller
@@ -10,8 +11,11 @@ class ResearchProfilingController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        return view('researchprofiling');
+    {      
+        // Fetch the research profiling data from the database
+        $completedpaper = CompletedPaper::all();
+        // Pass the data to the view   
+        return view('researchprofiling', compact('completedpaper'));
     }
 
     /**

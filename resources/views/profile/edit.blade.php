@@ -5,16 +5,26 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card mt-5 mb-3">
 
                 <div class="card-body">
                     @if (session('success'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-success" role="alert" id="success-alert">
                             {{ session('success') }}
                         </div>
+                        <script>
+                            setTimeout(() => {
+                                const alert = document.getElementById('success-alert');
+                                if (alert) {
+                                    alert.style.transition = 'opacity 0.5s ease';
+                                    alert.style.opacity = '0';
+                                    setTimeout(() => alert.remove(), 500);
+                                }
+                            }, 3000);
+                        </script>
                     @endif
 
-                    <form method="POST" action="{{ route('profile.update') }}">
+                    <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="container mb-3">
@@ -37,13 +47,48 @@
                                     display: flex; 
                                     justify-content: center; 
                                     align-items: center;
+                                    overflow: hidden;
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-image: url('{{ $user->dp ? asset('uploads/' . $user->dp) : asset('images/csulogo.png') }}');
                                 "
                             >
-                                <!-- FontAwesome Blank Profile Icon -->
-                                <i class="fas fa-user" style="font-size: 50px; color: #aaa;"></i>
+                                <!-- Hidden File Input -->
+                                <input type="file" name="dp" id="dp" class="d-none" accept="image/*" onchange="previewProfilePicture(this)">
+                                <label for="dp" style="cursor: pointer;">
+                                    <i class="fas fa-camera" style="font-size: 20px; color: #aaa;"></i>
+                                </label>
                             </div>
+
+                            <script>
+                                function previewProfilePicture(input) {
+                                    if (input.files && input.files[0]) {
+                                        const reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            input.parentElement.style.backgroundImage = `url(${e.target.result})`;
+                                        };
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                            </script>
                             <h4 class="text-center">{{ old('name', $user->name) }}</h4>
                             <p class="text-center">{{ old('email', $user->email) }}</p>
+                            <small class="text-center d-block">
+                                Login Pin Code : RDE@2025
+                                <button type="button" class="btn btn-link p-0" onclick="copyToClipboard('RDE@2025')" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </small>
+
+                            <script>
+                                function copyToClipboard(text) {
+                                    navigator.clipboard.writeText(text).then(() => {
+                                        alert('Copied to clipboard!');
+                                    }).catch(err => {
+                                        console.error('Failed to copy text: ', err);
+                                    });
+                                }
+                            </script>
                         </div>                        
                         <hr>
                         <div class="row">

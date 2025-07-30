@@ -4,8 +4,8 @@
 
 @include('partials.privacy_act')
 
-<div class="container mb-5">
-    <h4>Campus Research Profiling</h4> 
+<div class="text-center py-5 mb-3">
+    <h1 class="display-5 font-weight-bold" style="font-weight: bolder;">Research Profile</h1>
 </div>
 
 <div class="container">
@@ -29,8 +29,8 @@
         <div class="col-md-4">
             <div class="card bg-secondary text-white shadow-sm mb-3">
                 <div class="card-body">
-                    <h5><i class="far fa-bookmark"></i> Completed
-                        <span class="float-end">5</span>
+                    <h5><i class="fas fa-check-circle"></i> Completed
+                        <span class="float-end">{{ $completedpaper->count() }}</span>
                     </h5>
                 </div>
                 <a class="nav-link" href=" {{ route('completed.index') }} ">

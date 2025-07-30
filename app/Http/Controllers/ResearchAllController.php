@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompletedPaper;
 use Illuminate\Http\Request;
 
 class ResearchAllController extends Controller
@@ -10,8 +11,9 @@ class ResearchAllController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('publicview.research');
+    {   
+        $papers = CompletedPaper::all();
+        return view('publicview.research', compact('papers'));
     }
 
     /**

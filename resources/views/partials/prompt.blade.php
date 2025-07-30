@@ -11,3 +11,16 @@
     </div>
   </div>
 </div>
+
+                      {{-- <a href="" class="btn btn-success btn-sm mb-3" onclick="promptPinCode(event)">Upload Your File</a>
+                        <script>
+                            function promptPinCode(event) {
+                                event.preventDefault();
+                                const pin = prompt("Please enter PIN code:");
+                                if (pin === "RDE@2025") {
+                                    window.location.href = event.target.href;
+                                } else {
+                                    alert("Invalid PIN code.");
+                                }
+                            }
+                        </script> --}}

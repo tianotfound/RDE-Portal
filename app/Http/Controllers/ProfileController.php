@@ -21,14 +21,25 @@ class ProfileController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'password' => 'nullable|string|min:8|confirmed',
+            'dp' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480', // Increased max size to 20MB
         ]);
+
         $user = User::find(Auth::id());
-        $user = Auth::user();
         $user->name = $request->name;
         $user->email = $request->email;
 
         if ($request->password) {
             $user->password = bcrypt($request->password);
+        }
+
+        if ($request->hasFile('dp')) {
+            if ($user->dp && file_exists(public_path('uploads/' . $user->dp))) {
+            unlink(public_path('uploads/' . $user->dp));
+            }
+
+            $fileName = time() . '.' . $request->dp->extension();
+            $request->dp->move(public_path('uploads'), $fileName);
+            $user->dp = $fileName;
         }
 
         $user->save();

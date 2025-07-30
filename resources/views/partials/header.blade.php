@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-6">
                 <div class="float-end">
-                    <h4 class="float-end" style="font-family: 'Times New Roman', sans-serif;">Philippine Standard Time</h4>
+                    <h4 class="float-end">Philippine Standard Time</h4>
                     <h4 class="text-center">{{ $currentDate }}</h4>
                     <div class="row">
                         <div class="col-md-6">

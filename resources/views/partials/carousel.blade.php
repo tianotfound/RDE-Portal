@@ -1,36 +1,35 @@
-<div class="mb-5">
+<div>
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-slide-to="0">
                 <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" alt="Image 1">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-slide-to="1">
                 <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" alt="Image 2">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-slide-to="2">
                 <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" alt="Image 3">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-slide-to="3">
                 <img src="{{ asset('images/4.jpg') }}" class="d-block w-100" alt="Image 4">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-slide-to="4">
                 <img src="{{ asset('images/5.jpg') }}" class="d-block w-100" alt="Image 5">
             </div>
-            <div class="carousel-item">
-                <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" alt="Image 6">
-            </div>
-            
-        </div>
-        <div class="carousel-thumbnails-wrapper">
-            <div class="carousel-thumbnails d-flex justify-content-center mt-2">
-                <img src="{{ asset('images/1.jpg') }}" class="thumbnail active" data-bs-target="#imageCarousel" data-bs-slide-to="0" alt="Thumbnail 1">
-                <img src="{{ asset('images/2.jpg') }}" class="thumbnail" data-bs-target="#imageCarousel" data-bs-slide-to="1" alt="Thumbnail 2">
-                <img src="{{ asset('images/3.jpg') }}" class="thumbnail" data-bs-target="#imageCarousel" data-bs-slide-to="2" alt="Thumbnail 3">
-                <img src="{{ asset('images/4.jpg') }}" class="thumbnail" data-bs-target="#imageCarousel" data-bs-slide-to="3" alt="Thumbnail 4">
-                <img src="{{ asset('images/5.jpg') }}" class="thumbnail" data-bs-target="#imageCarousel" data-bs-slide-to="4" alt="Thumbnail 5">
-                <img src="{{ asset('images/2.jpg') }}" class="thumbnail" data-bs-target="#imageCarousel" data-bs-slide-to="5" alt="Thumbnail 6">
+            <div class="carousel-item" data-bs-slide-to="5">
+                <img src="{{ asset('images/6.jpg') }}" class="d-block w-100" alt="Image 6">
             </div>
         </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

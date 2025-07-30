@@ -49,10 +49,16 @@ Route::middleware(['auth'])->group(function () {
 Route::resource('researchall', App\Http\Controllers\ResearchAllController::class);
 Route::resource('ktmall', App\Http\Controllers\KTMAllController::class);
 Route::resource('extensionall', App\Http\Controllers\ExtensionAllController::class);
+Route::resource('updateall', App\Http\Controllers\UpdatesAllController::class);
+Route::resource('announcementall', App\Http\Controllers\AnnouncementAllController::class);
+Route::resource('sustainable-development-goals', App\Http\Controllers\SDGCtrl::class);
+Route::resource('campus-journals', App\Http\Controllers\JournalsCtrl::class);
+Route::resource('contact-us', App\Http\Controllers\ContactCtrl::class);
 // Public View
 
 
 // Admin Panel Routes
+Route::resource('rdektm', App\Http\Controllers\RdeKtmController::class);
 Route::resource('ktm', App\Http\Controllers\KtmController::class);
 Route::resource('research', App\Http\Controllers\ResearchController::class);
 Route::resource('extension', App\Http\Controllers\ExtensionController::class);
@@ -64,4 +70,11 @@ Route::resource('presentation', App\Http\Controllers\PresentationPaperCtrl::clas
 Route::resource('publication', App\Http\Controllers\PublicationPaperCtrl::class);
 Route::resource('ip', App\Http\Controllers\IpPaperCtrl::class);
 Route::resource('caa', App\Http\Controllers\CaaPaperCtrl::class);
+
+Route::resource('filetracking', App\Http\Controllers\FileTrackingCtrl::class);
+
+Route::resource('trackroute', App\Http\Controllers\TrackRouteCtrl::class);
+
+Route::resource('announcement', App\Http\Controllers\AnnouncementCtrl::class);
+Route::resource('updates', App\Http\Controllers\UpdateCtrl::class);
 // Admin Panel Routes

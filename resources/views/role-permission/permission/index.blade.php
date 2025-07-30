@@ -32,15 +32,13 @@
                     <table id="myTable" class="table table-hover tabe-sm">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th width="40%">Action</th>
+                                <th>Permission</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($permissions as $permission)
                             <tr>
-                                <td>{{ $permission->id }}</td>
                                 <td>{{ $permission->name }}</td>
                                 <td>
                                     @can('update permission')

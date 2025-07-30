@@ -4,15 +4,28 @@
 
     @include('partials.prompt')
 
-    <div class="container-fluid py-3">
+    <div class="container">
         <div class="col-md-12 text-center">
             <h2>KTM</h2>
             <nav aria-label="breadcrumb" class="d-flex justify-content-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/') }}" style="text-decoration: none; color: black;">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ url('ktmall') }}" style="text-decoration: none; color: black;">Knowledge and Technology Management</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}" style="text-decoration: none; color: primary;">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('ktmall.index') }}" style="text-decoration: none; color: black;">Knowledge and Technology Management</a></li>
                 </ol>
             </nav>
+        </div>
+    </div>
+
+    <div class="container py-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="query" class="form-control" placeholder="Search" aria-label="Search research">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

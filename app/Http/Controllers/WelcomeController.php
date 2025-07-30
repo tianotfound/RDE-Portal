@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Event;
+use App\Models\SDG;
 
 class WelcomeController extends Controller
 {
@@ -15,7 +16,8 @@ class WelcomeController extends Controller
     {   
         $currentDateTime = Carbon::now('Asia/Manila');
         $currentDate = now()->format('F j, Y');
-        return view('welcome', compact('currentDateTime', 'currentDate'));
+        $sdgs = SDG::all();
+        return view('welcome', compact('currentDateTime', 'currentDate', 'sdgs'));
     }
 
     /**

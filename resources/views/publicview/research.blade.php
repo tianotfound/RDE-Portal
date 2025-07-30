@@ -4,20 +4,35 @@
 
     @include('partials.prompt')
 
-    <div class="container-fluid py-3">
+    <div class="container">
         <div class="col-md-12 text-center">
             <h2>Research</h2>
             <nav aria-label="breadcrumb" class="d-flex justify-content-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/') }}" style="text-decoration: none; color: black;">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ url('researches') }}" style="text-decoration: none; color: black;">Research</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}" style="text-decoration: none; color: primary;">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('researchall.index') }}" style="text-decoration: none; color: black;">Research</a></li>
                 </ol>
             </nav>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container py-3">
         <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="query" class="form-control" placeholder="Search" aria-label="Search research">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">

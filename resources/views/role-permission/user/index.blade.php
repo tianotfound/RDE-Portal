@@ -36,17 +36,24 @@
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>Profile Picture</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Roles</th>
+                                <th>Pin Code</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
+                                <td>
+                                    @if ($user->dp)
+                                        <img src="{{ asset('uploads/' . $user->dp) }}" alt="Profile Picture" width="50" height="50">
+                                    @else
+                                        <img src="{{ asset('images/csulogo.png') }}" alt="Profile Picture" width="50" height="50">
+                                    @endif
+                                </td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
@@ -56,6 +63,7 @@
                                     @endforeach
                                     @endif
                                 </td>
+                                <td>{{ $user->pin }}</td>
                                 <td>
                                     @can('update user')
                                     <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-success btn-sm">

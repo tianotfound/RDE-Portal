@@ -4,12 +4,11 @@
             <div class="modal-header">
                 <h5 class="modal-title">Data Privacy Act</h5>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
                 <p>We value your privacy. By continuing to use this website, you agree to our compliance with the Data Privacy Act. Please review our privacy policy for more details.</p>
             </div>
             <div class="modal-footer">
-                <span id="timer" style="margin-right: 10px;">Please wait 3 seconds...</span>
-                <button id="acceptPrivacy" class="btn btn-primary" disabled>Accept</button>
+                <button id="acceptPrivacy" class="btn btn-primary">Accept</button>
             </div>
         </div>
     </div>
@@ -19,21 +18,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         const modal = document.getElementById('privacyActModal');
         const acceptButton = document.getElementById('acceptPrivacy');
-        const timerSpan = document.getElementById('timer');
 
-        modal.style.display = 'block';
-
-        let countdown = 3;
-        const timerInterval = setInterval(() => {
-            countdown--;
-            if (countdown > 0) {
-                timerSpan.textContent = `Please wait ${countdown} seconds...`;
-            } else {
-                timerSpan.textContent = '';
-                acceptButton.disabled = false;
-                clearInterval(timerInterval);
-            }
-        }, 1000);
+        modal.style.display = 'flex';
 
         acceptButton.addEventListener('click', function () {
             modal.style.display = 'none';

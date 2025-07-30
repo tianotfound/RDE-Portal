@@ -136,7 +136,7 @@
 
                         <div class="row justify-content-center">
                             <div class="col-md-9 mb-5 text-center">
-                                <marquee behavior="" direction="left" class="text-danger">Not in charge of the Administration? Accessed only by the Administrators.</marquee>
+                                <marquee behavior="" direction="left" class="text-danger">Not in charge of the Administration? Accessed only by the Administrators, RDE Staff, and Coordinators.</marquee>
                             </div>
                         </div>
                     </form>
