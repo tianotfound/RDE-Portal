@@ -75,6 +75,4 @@
     </div>
 </div>
 
-<h1>last call</h1>
-
 @endsection

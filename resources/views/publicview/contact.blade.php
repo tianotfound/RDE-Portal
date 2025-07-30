@@ -81,6 +81,4 @@
         </div>
     </div>
 
-    <h2>ano na nga ba ito</h2>
-
 @endsection
